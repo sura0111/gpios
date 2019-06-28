@@ -5,13 +5,21 @@
   "scripts": {
     "build": "rimraf lib && tsc",
     "execute": "ts-node -r tsconfig-paths/register",
+    "ts-start": "ts-node -r tsconfig-paths/register src/app.ts",
     "start": "yarn build && node lib/index.js"
   },
   "repository": "git@github.com:sura0111/ts-node-app.git",
   "author": "Kh, Sura | Sura | LPD <sura.kh@rakuten.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/cron": "^1.7.1",
+    "bluebird": "^3.5.5",
+    "cron": "^1.7.1",
     "dayjs": "^1.8.14",
+    "ds18b20-raspi": "^0.3.3",
+    "mysql": "^2.17.1",
+    "node-dht-sensor": "^0.3.0",
+    "onoff": "^4.1.2",
     "typescript": "^3.5.2"
   },
   "devDependencies": {
