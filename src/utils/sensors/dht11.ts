@@ -1,5 +1,5 @@
 import { promises as sensor } from 'node-dht-sensor'
-import logger from '@/functions/logger'
+import logger from '@/utils/logger'
 
 export default class TemperatureSensor {
   private static readonly DEFAULT_SENSOR_NO = 11

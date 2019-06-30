@@ -1,2 +1,2 @@
 import 'module-alias/register'
-import './app'
+import './tsIndex'
