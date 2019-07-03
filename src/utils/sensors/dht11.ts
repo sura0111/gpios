@@ -1,9 +1,10 @@
 import { promises as sensor } from 'node-dht-sensor'
 import logger from '@/utils/logger'
+import { GpioPin } from '@/env/gpios'
 
 export default class TemperatureSensor {
   private static readonly DEFAULT_SENSOR_NO = 11
-  private static readonly DEFAULT_GPIO_NO = 16
+  private static readonly DEFAULT_GPIO_NO = GpioPin.dht11
   private static readonly DEFAULT_MAX_RETRIES = 10
   private static readonly sensor = sensor
   private gpio: number

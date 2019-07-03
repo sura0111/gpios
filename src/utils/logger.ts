@@ -12,7 +12,7 @@ export default {
   },
 
   debug(message: any, ...optionalParameters: any) {
-    console.debug(chalk.bgYellow('DEBUG'), this.date, message, ...optionalParameters)
+    console.debug(chalk.bgYellow(chalk.black('DEBUG')), this.date, message, ...optionalParameters)
   },
 
   trace(message: any, ...optionalParameters: any) {
@@ -20,7 +20,7 @@ export default {
   },
 
   info(message: any, ...optionalParameters: any) {
-    console.info(chalk.bgCyan('INFO'), this.date, message, ...optionalParameters)
+    console.info(chalk.bgCyan(chalk.black('INFO')), this.date, message, ...optionalParameters)
   },
 
   warn(message: any, ...optionalParameters: any) {

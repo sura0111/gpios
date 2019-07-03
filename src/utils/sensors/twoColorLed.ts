@@ -1,18 +1,19 @@
-import { Gpio } from 'onoff'
+import { Gpio, BinaryValue } from 'onoff'
+import { GpioPin } from '@/env/gpios'
 
 const gpioLed = {
-  green: new Gpio(20, 'out'),
-  red: new Gpio(21, 'out'),
+  green: new Gpio(GpioPin.twoColorLedGreen, 'out'),
+  red: new Gpio(GpioPin.twoColorLedRed, 'out'),
 }
 
 let timer: NodeJS.Timeout | null
 
-const led = async ({ green, red }: { green?: boolean; red?: boolean }, timeout?: number) => {
+const led = async ({ green, red }: { green?: BinaryValue; red?: BinaryValue }, timeout?: number) => {
   if (green !== undefined) {
-    await gpioLed.green.write(green ? 1 : 0)
+    await gpioLed.green.write(green)
   }
   if (red !== undefined) {
-    await gpioLed.red.write(red ? 1 : 0)
+    await gpioLed.red.write(red)
   }
   if (timeout) {
     timer && clearTimeout(timer)
@@ -23,6 +24,9 @@ const led = async ({ green, red }: { green?: boolean; red?: boolean }, timeout?:
   }
 }
 
-process.on('SIGINT', () => led({ green: false, red: false }))
+process.on('SIGINT', () => {
+  gpioLed.green.unexport()
+  gpioLed.red.unexport()
+})
 
 export default led
