@@ -6,6 +6,7 @@ export const TypeTemperature = new GraphQLObjectType({
   fields: {
     id: { type: GraphQLID },
     temperature: { type: GraphQLFloat },
+    humidity: { type: GraphQLFloat },
     datetime: { type: GraphQLDateTime },
   },
 })

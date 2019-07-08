@@ -3,7 +3,7 @@ import { speak } from '@/utils/nodeGoogleHome'
 import Mutation from './Mutation'
 import { GraphQLDateTime } from 'graphql-iso-date'
 import { temperatureRepository } from '@/repositories'
-import dayjs = require('dayjs')
+import dayjs from 'dayjs'
 
 export default new Mutation({
   type: TypeGoogleHomeSpeak,

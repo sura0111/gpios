@@ -1,9 +1,9 @@
-import { readTemperature } from '@/utils/sensors/dsb18b20'
 import { temperatureRepository } from '@/repositories'
-import logger from '@/utils/logger'
+import Dht from '@/utils/sensors/dht'
+
+Dht.initialize()
 
 export default async () => {
-  const temperature = readTemperature()
-  logger.info('temperature', temperature)
-  await temperatureRepository.insert({ temperature })
+  const { temperature, humidity } = await Dht.read()
+  await temperatureRepository.insert({ temperature, humidity })
 }
