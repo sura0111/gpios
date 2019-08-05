@@ -10,7 +10,7 @@ Currently this app can do below things
   * make GoogleHome say something or play something that you want
   * make GoogleHome inform the room temparature
 
-## Preparations before the start
+## Preparations
 * You need to set environment variables
   ```typescript
   // ./src/env/googleHomeConfig.ts
