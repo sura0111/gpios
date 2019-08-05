@@ -3,6 +3,7 @@ import led from './twoColorLed'
 import { GpioPin } from '@/env/gpios'
 import logger from '../logger'
 
+// not tested
 const infraRedReceiverGpio = new Gpio(GpioPin.infraRedReceiver, 'in', 'falling')
 
 infraRedReceiverGpio.watch((error, value) => {

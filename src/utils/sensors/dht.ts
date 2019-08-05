@@ -4,7 +4,7 @@ import { GpioPin } from '@/env/gpios'
 
 export default class Dht {
   private static readonly DEFAULT_SENSOR_NO = 22
-  private static readonly DEFAULT_GPIO_NO = GpioPin.dht11
+  private static readonly DEFAULT_GPIO_NO = GpioPin.dht
   private static readonly DEFAULT_MAX_RETRIES = 10
   private static readonly sensor = sensor
   private static gpioNo: number
