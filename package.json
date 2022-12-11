@@ -21,7 +21,7 @@
     "cron": "^1.7.1",
     "dayjs": "^1.8.14",
     "ds18b20-raspi": "^0.3.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-graphql": "^0.8.0",
     "google-home-notifier": "^1.2.0",
     "google-tts-api": "0.0.3",
